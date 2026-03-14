@@ -95,11 +95,11 @@ costo total: 16.2
 ###### En la página del repositorio, presiona **Code** y copia la URL.
 
 ##### Url:
-```https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi.git```
+```hhttps://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi.git```
 > Esto descargará todo el repositorio en tu computadora.
 
 #### Paso 3: entrar a la carpeta
-```Proyectos.inventario-Riwi.git```
+```Proyectos.inventario-Riwi```
 #### Paso 4: ejecutar el programa
 
 **Opción 1 (botón de ejecutar):**
