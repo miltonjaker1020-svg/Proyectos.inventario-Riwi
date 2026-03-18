@@ -1,4 +1,4 @@
-inventario=[]
+inventario=[] # Establecemos una lista llama inventario
 def colores():
     AZUL = "\033[94m"
     BLANCO = "\033[97m"
