@@ -51,7 +51,7 @@ def agregar_producto():
             if producto in inventario:
                 inventario[producto]["cantidad"]+=cantidad
                 totalactualizado=inventario[producto]["precio"]/inventario[producto]["cantidad"]
-                inventario[producto]["precio"]+=totalactualizado
+                inventario[producto]["precio"]+=totalactualizado*cantidad
             else:
                 diccionario={
                 "producto":producto,    
