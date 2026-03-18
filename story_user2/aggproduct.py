@@ -61,8 +61,7 @@ def agregar_producto():
              }
                 inventario.append(diccionario)
             
-            if producto in inventario:
-                inventario[producto]["cantidad"]+=cantidad
+           
                 
             print(VERDE + "✔ producto agregado con exito"+ RESET)
             confirmar=input("desea agregar otro producto? (si/no): ").lower()
