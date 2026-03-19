@@ -14,7 +14,7 @@ def mostrar_inventario(inventario): # Establecemos la funcion mostrar_inventario
             
         else:
             for i in inventario: # lee los valores que estan dentro de la lista
-                print(f"producto: {i["producto"]}  |  cantidad: {i['cantidad']}  |  precio total : {i['precio']} ")
+                print(f"producto: {i['producto']}  |  cantidad: {i['cantidad']}  |  precio total : {i['precio']} ")
         run=False # Simula un break
         
         
