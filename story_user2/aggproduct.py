@@ -78,3 +78,4 @@ def agregar_producto():
         except ValueError:  # Capturamos el error
             print(ROJO + "ingrese un valor valido"+ RESET)
             continue
+
