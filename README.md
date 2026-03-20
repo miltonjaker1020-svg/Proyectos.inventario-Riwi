@@ -181,3 +181,13 @@
 > Aqui se establecieron variables(```total_cantidad```,```total_precio```) antes del ```for``` para almacenar en estas los valores totales de cantidad y precio
 
 ### Como se ve en consola:
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/1.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/2.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/3.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/4.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/5.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/6.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/7.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/8.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/9.png)
+
