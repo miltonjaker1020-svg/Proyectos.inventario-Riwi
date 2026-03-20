@@ -5,7 +5,7 @@
 3. #### Ver las estadisticas del inventario
 ---
 ### Diagrama de flujo
-![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/fc0fed329fb5534054acac49511fbbc59b586769/Diagrama%20sin%20t%C3%ADtulo.png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/4526ed4f3f9b49e9c7b412feb9ee95bd99bee2a7/Diagrama%20sin%20t%C3%ADtulo4.png)
 #
 ### Explicacion de cada funcion
 #### Agregar producto
