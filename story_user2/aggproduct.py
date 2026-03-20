@@ -65,9 +65,9 @@ def agregar_producto():
                 
             print(VERDE + "✔ producto agregado con exito"+ RESET) # Le hacemos saber al cliente que se registro correctamente el producto
             opcion=input("desea agregar otro producto? (si/no): ").lower()  # Preguntamos si quiere agregar otro producto
-            while confirmar not in ("si","no"): # Verificamos que no pongo palabras incorrectas
+            while opcion not in ("si","no"): # Verificamos que no pongo palabras incorrectas
                 print(ROJO + "ingrese un valor valido"+ RESET)
-                confirmar=input("desea agregar otro producto? (si/no): ").lower()
+                opcion=input("desea agregar otro producto? (si/no): ").lower()
             
             if opcion=="no":  # Si pone no cerramos el siclo con un confirmar false
                 confirmar=False
