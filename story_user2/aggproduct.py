@@ -1,5 +1,5 @@
 inventario=[] # Establecemos una lista llama inventario
-def colores():
+def colores(): # proyeccion a futuro ya que no me salio Xc
     AZUL = "\033[94m"
     BLANCO = "\033[97m"
     VERDE = "\033[92m"
