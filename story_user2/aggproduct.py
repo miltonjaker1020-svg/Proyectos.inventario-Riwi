@@ -72,8 +72,7 @@ def agregar_producto():
             if opcion=="no":  # Si pone no cerramos el siclo con un confirmar false
                 confirmar=False
                 
-            elif opcion=="si": # Si pone si inicia otra iteracion con un confirmar true
-                confirmar=True
+          
 
         except ValueError:  # Capturamos el error
             print(ROJO + "ingrese un valor valido"+ RESET)
