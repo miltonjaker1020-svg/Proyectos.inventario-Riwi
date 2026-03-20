@@ -4,6 +4,9 @@
 2. #### Mostrar el inventario
 3. #### Ver las estadisticas del inventario
 ---
+### Diagrama de flujo
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/fc0fed329fb5534054acac49511fbbc59b586769/Diagrama%20sin%20t%C3%ADtulo.png)
+#
 ### Explicacion de cada funcion
 #### Agregar producto
 ##### Primero que nada se establecen los colores que se van a usar en el programa al momento de mostrar algo en la consola
