@@ -36,3 +36,5 @@ while arranque==True:
 
     except ValueError:
         print("\033[91m" + "ingrese una opcion valida"+ "\033[0m")
+
+# El objetivo de esta semana fue aprender a usar las diversas estructuras de datos y manipularlas dependiendo de sus funcionalidades,tambien poner en practica el gran poder que tienen los condicionales sobre los menus interactivos y por ultimo las maneras mas optimas para manejar errores 
