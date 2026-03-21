@@ -203,4 +203,65 @@
 #
 ![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/6ed20a4c54cd6ffe75d92ea6dc32c787e84952f3/9.png)
 
+### Cómo usar el archivo 
+
+#### Forma 1: Para personas que no saben usar Git ni herramientas de desarrollo
+
+##### Si nunca has usado Git, repositorios o programas de programación avanzados, puedes usar el archivo de una forma muy sencilla.
+
+##### Paso 1: entrar al repositorio
+######  Primero debes abrir el enlace del repositorio público en tu navegador.
+
+##### Paso 2: descargar el archivo
+###### Tienes dos formas simples de hacerlo:
+
+**Opción A (descargar todo el repositorio):**
+###### 1. Busca el botón verde que dice **Code**.
+###### 2. Haz clic en **Download ZIP**.
+###### 3. Se descargará una carpeta comprimida en tu computadora.
+###### 4. Descomprímela.
+
+**Opción B (descargar solo el archivo):**
+###### 1. Haz clic sobre el archivo que quieres usar.
+###### 2. Busca el botón **Download** o **Raw**.
+###### 3. Guárdalo en tu computadora.
+
+#### Paso 3: ejecutar el programa
+###### Si el archivo es un programa de Python:
+
+1. Asegúrate de tener **Python instalado**. si no lo tiene instalado [click aqui para descargarlo](https://www.python.org/ftp/python/pymanager/python-manager-26.0.msix)
+2. Abre la carpeta donde descargaste el archivo.
+3. Haz doble clic o ejecútalo con Python.
+
+#### Otra forma es abrir una terminal en esa carpeta y escribir:
+```python main.py```
+##### El programa se ejecutará y podrás usarlo.
+------
+#### Forma 2: Para personas que saben usar Git
+
+##### Si ya conoces Git, la forma más común es **clonar el repositorio**.
+
+##### Paso 1: copiar la URL del repositorio
+###### En la página del repositorio, presiona **Code** y copia la URL.
+
+##### Url:
+```hhttps://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi.git```
+> Esto descargará todo el repositorio en tu computadora.
+
+#### Paso 3: entrar a la carpeta
+```Proyectos.inventario-Riwi```
+#### paso 4: hacer pull a la rama 
+```feature/H2_modulo1```
+#### paso 5: Abrir la terminal den la carpeta y agrir visual con 
+```code .```
+#### Paso 4: ejecutar el programa
+
+**Opción 1 (botón de ejecutar):**
+Presiona el botón **Run Python File**.
+
+**Opción 2 (terminal integrada):**
+
+Abre la terminal en VS Code y escribe:
+```python main.py```
+
 
