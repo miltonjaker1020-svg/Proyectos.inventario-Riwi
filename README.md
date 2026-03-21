@@ -252,7 +252,7 @@
 ```Proyectos.inventario-Riwi```
 #### paso 4: hacer pull a la rama 
 ```feature/H2_modulo1```
-#### paso 5: Abrir la terminal den la carpeta y agrir visual con 
+#### paso 5: Abrir la terminal en la carpeta y abrir visual con 
 ```code .```
 #### Paso 4: ejecutar el programa
 
