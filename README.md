@@ -245,7 +245,7 @@
 ###### En la página del repositorio, presiona **Code** y copia la URL.
 
 ##### Url:
-```hhttps://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi.git```
+```https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi.git```
 > Esto descargará todo el repositorio en tu computadora.
 
 #### Paso 3: entrar a la carpeta
