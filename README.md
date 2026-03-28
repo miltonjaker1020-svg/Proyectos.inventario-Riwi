@@ -5,7 +5,7 @@
 ---
 
 ## Diagrama de flujo
-![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/b981fc01a612d5e6ebdddbad05fac0b06f4f989d/Diagrama%20sin%20t%C3%ADtulo.drawio%20(1).png)
+![image alt](https://github.com/miltonjaker1020-svg/Proyectos.inventario-Riwi/blob/bfcacd9ed811ddd6118a547ab032d3a3afbec703/Diagrama%20sin%20t%C3%ADtulo.drawio%20(2).png)
 
 
 
