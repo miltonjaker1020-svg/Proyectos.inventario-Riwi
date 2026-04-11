@@ -1,0 +1,156 @@
+.nombre1{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+ul{
+    list-style-type: none; /* Quita los puntos */
+    margin: 0;             /* Elimina margen */
+    padding: 0; 
+}
+
+.milton{
+    
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    align-items: center;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    border-color: rgb(0, 0, 0);
+    border: 5px solid;
+    
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #989a9d;
+    padding:2rem;
+    
+}
+
+.sobre{
+    background-color: white;
+    width: 350px;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    
+
+}
+
+
+
+.fila{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 3rem auto;
+    
+    
+}
+
+
+.separador {
+    border: none;
+    height: 2px;
+    width: 70%;
+    margin: 1rem auto;
+    background: linear-gradient(to right, transparent, #555, transparent);
+}
+
+
+
+
+
+
+.fotop{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    align-items: center;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    border-color: rgb(0, 0, 0);
+    border: 5px solid;
+    float: left;
+    margin-right: 1rem;
+    
+}
+
+
+
+
+
+
+
+
+
+header h1 {
+    text-align: center;
+    
+}
+
+
+
+
+
+.separador {
+    border: none;
+    height: 2px;
+    width: 70%;
+    margin: 1rem auto;
+    background: linear-gradient(to right, transparent, #555, transparent);
+}
+
+.s_mascotas {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 3rem auto;
+    max-width: 800px;
+    box-shadow: 0 10px 25px rgba(8, 7, 7, 0.1);
+}
+
+.s_mascotas img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #333;
+    flex-shrink: 0;
+}
+
+.s_mascotas h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+
+
+#loro button{
+    width: 200px;
+    height: 200px;
+    border-radius: 20%;
+    object-fit: cover;
+    border: 5px solid #3c3a3a;
+    flex-shrink: 0;
+    background-color: rgba(192, 196, 206, 0.777);
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(100, 10, 10);
+    
+}   
+
+
