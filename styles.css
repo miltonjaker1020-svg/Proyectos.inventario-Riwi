@@ -1,0 +1,253 @@
+.nombre1{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+ul{
+    list-style-type: none; /* Quita los puntos */
+    margin: 0;             /* Elimina margen */
+    padding: 0; 
+}
+
+.milton{
+    
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    align-items: center;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    border-color: rgb(0, 0, 0);
+    border: 5px solid;
+    
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #989a9d;
+    padding:2rem;
+    
+}
+
+.sobre{
+    background-color: white;
+    width: 350px;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    
+
+}
+
+#proyecto{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr ;
+    gap: 1px;
+}
+
+
+.fila{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 3rem auto;
+    
+    
+}
+
+
+.separador {
+    border: none;
+    height: 2px;
+    width: 70%;
+    margin: 1rem auto;
+    background: linear-gradient(to right, transparent, #555, transparent);
+}
+
+
+
+
+
+
+.fotop{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    align-items: center;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    border-color: rgb(0, 0, 0);
+    border: 5px solid;
+    float: left;
+    margin-right: 1rem;
+    
+}
+
+
+/* ===== ANIMACIONES DE ENTRADA ===== */
+@keyframes bajarFoto {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subirTarjeta {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== ANIMACION HOVER (rebote) ===== */
+@keyframes rebote {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-14px); }
+  50%  { transform: translateY(-6px); }
+  70%  { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
+}
+
+/* ===== FOTO: baja al cargar ===== */
+.milton {
+  animation: bajarFoto 0.8s ease-out forwards;
+}
+
+/* ===== NOMBRE: también baja (un poco después) ===== */
+.nombre1 {
+  animation: bajarFoto 0.8s ease-out 0.2s both;
+}
+
+/* ===== TARJETAS: suben al cargar ===== */
+.sobre {
+  animation: subirTarjeta 0.8s ease-out both;
+}
+
+/* Cada tarjeta con un pequeño delay para que suban en cascada */
+.sobre:nth-child(1) { animation-delay: 0.3s; }
+.sobre:nth-child(2) { animation-delay: 0.5s; }
+.sobre:nth-child(3) { animation-delay: 0.7s; }
+
+/* ===== HOVER REBOTE en las tarjetas ===== */
+.sobre {
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.sobre:hover {
+  animation: rebote 0.5s ease forwards;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+header{
+    display: flex;
+    align-items: center ;
+}
+
+header h1 {
+    text-align: center;
+    
+}
+
+
+
+
+
+
+<!--Estilo para la pagina de mascotas-->
+
+.separador {
+    border: none;
+    height: 2px;
+    width: 70%;
+    margin: 1rem auto;
+    background: linear-gradient(to right, transparent, #555, transparent);
+}
+
+.s_mascotas {
+    display: grid;
+    grid-template-columns: 40% 40% 20% 40% 80%;
+    grid-template-rows: 80% 10% 80% 80% 80%;
+    
+    
+    gap: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 3rem auto;
+    max-width: 800px;
+    box-shadow: 0 10px 25px rgba(8, 7, 7, 0.1);
+}
+
+.s_mascotas img {
+    width: 200px;
+    height: 200px;  
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #333;
+    flex-shrink: 0;
+    padding: 0.5rem;
+    background-color: rgb(246, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(100, 10, 10);
+    
+}
+
+
+.s_mascotas h2 {
+    
+    display: grid;
+    grid-template-columns: 20vh 10vh 20vh 20vh 40vh;
+    grid-template-rows: 1vh   1vh 1vh 2vh 1vh;
+    grid-template-columns: 3;
+    grid-row-start: 7;
+    grid-row-end: 2 ;
+    
+    
+}   
+
+
+
+.boton{
+    width: 200px;
+    height: 50px;
+    border-radius: 20%;
+    object-fit: cover;
+    border: 5px solid #978e8e;
+    flex-shrink: 0;
+    background-color: rgba(192, 196, 206, 0.777);
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(172, 96, 96);
+    
+}   
+
+.boton a{
+    text-decoration: none;
+    color: rgb(172, 96, 96);
+}
+.boton:hover{
+    background-color: rgb(237, 208, 208);
+    color: rgb(233, 214, 214);
+}
