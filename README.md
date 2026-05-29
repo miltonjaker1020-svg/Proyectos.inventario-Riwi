@@ -98,7 +98,7 @@ if (respuesta.ok) {
 
 ---
 
-## 🏃‍♂️ ¿Cómo usar y probar este proyecto en tu computadora?
+##  ¿Cómo usar  este proyecto?
 
 Para que la aplicación funcione al 100% y pueda guardar datos de verdad, sigue estos pasos:
 
@@ -116,9 +116,3 @@ Para que la aplicación funcione al 100% y pueda guardar datos de verdad, sigue 
 
 ---
 
-## ✅ Funciones técnicas implementadas
-
-* **Manipulación del DOM:** Se usan métodos como `createElement` y `removeChild`.
-* **Validaciones:** Control estricto de inputs para evitar datos vacíos.
-* **Local Storage:** `localStorage.setItem` y `getItem` como respaldo de sesión.
-* **Fetch API (Promesas):** Conexión asíncrona real (`async/await`) manejando métodos `GET`, `POST`, `PUT` y `DELETE`.
