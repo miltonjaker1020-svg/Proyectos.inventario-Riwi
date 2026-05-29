@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manipulación del DOM — Notas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Variables & Reset ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0e0e10;
+      --surface:   #18181c;
+      --border:    #2a2a32;
+      --accent:    #d4f54c;       /* vivid chartreuse */
+      --accent2:   #7c6dfa;       /* violet */
+      --text:      #f0f0f0;
+      --muted:     #6b6b78;
+      --danger:    #ff4d6d;
+      --radius:    8px;
+      --mono:      'DM Mono', monospace;
+      --display:   'Syne', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--display);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 100px;
+      /* subtle noise texture */
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, #1a1a2e 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+    }
+
+    /* ── Header ───────────────────────────────────────────── */
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeDown .5s ease both;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .14em;
+      color: black;
+      border: 1px solid var(--accent);
+      border-radius: 20px;
+      padding: 3px 12px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .subtitle {
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* ── Card container ───────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      width: 100%;
+      max-width: 560px;
+      animation: fadeUp .5s .1s ease both;
+    }
+
+    /* ── Input row ────────────────────────────────────────── */
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    #inputNota {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-family: var(--mono);
+      font-size: .9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    #inputNota::placeholder { color: var(--muted); }
+    #inputNota:focus { border-color: var(--accent); }
+
+    #btnAgregar {
+      background: var(--accent);
+      color: #0e0e10;
+      border: none;
+      border-radius: var(--radius);
+      padding: 12px 22px;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: .85rem;
+      cursor: pointer;
+      letter-spacing: .04em;
+      transition: opacity .15s, transform .12s;
+    }
+
+    #btnAgregar:hover { opacity: .88; }
+    #btnAgregar:active { transform: scale(.96); }
+
+    /* ── Error message ────────────────────────────────────── */
+    #mensajeError {
+      font-family: var(--mono);
+      font-size: .75rem;
+      color: var(--danger);
+      min-height: 18px;
+      margin-bottom: 20px;
+      padding-left: 4px;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    #mensajeError.visible { opacity: 1; }
+
+    /* ── Divider ──────────────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .divider span {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Notes list ───────────────────────────────────────── */
+    #listaNotas {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Empty state */
+    #listaNotas:empty::after {
+      content: 'Aún no hay notas. ¡Agrega una arriba!';
+      display: block;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: .8rem;
+      color: var(--muted);
+      padding: 24px 0;
+    }
+
+    /* ── Note item ────────────────────────────────────────── */
+    #listaNotas li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      animation: slideIn .25s ease both;
+      transition: border-color .2s;
+    }
+
+    #listaNotas li:hover { border-color: var(--accent2); }
+
+    .nota-bullet {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .nota-texto {
+      flex: 1;
+      font-family: var(--mono);
+      font-size: .88rem;
+      font-weight: 300;
+      color: var(--text);
+      word-break: break-word;
+    }
+    
+    button {
+
+      cursor: pointer;
+    }
+    .btn-eliminar {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: .72rem;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: border-color .15s, color .15s, background .15s;
+      flex-shrink: 0;
+      letter-spacing: .04em;
+    }
+
+    .btn-eliminar:hover {
+      border-color: var(--danger);
+      color: var(--danger);
+      background: rgba(255,77,109,.06);
+    }
+
+    /* ── Footer counter ───────────────────────────────────── */
+    .footer-info {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--muted);
+    }
+
+    #contadorNotas { color: var(--accent2); font-weight: 400; }
+
+    /* ── Animations ───────────────────────────────────────── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-10px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; transform: scale(1); }
+      to   { opacity: 0; transform: scale(.95); }
+    }
+
+    .removing {
+      animation: fadeOut .2s ease forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header>
+    
+    <h1>Mis <span>Notas</span></h1>
+    <p class="subtitle">// Escribe una nota y presiona Agregar — persiste al recargar</p>
+  </header>
+
+  <!-- ── Main card ──────────────────────────────────────── -->
+  <div class="card">
+
+    <!-- Input row: texto + botón -->
+    <div class="input-row">
+      <input
+        class="inpute"
+        type="text"
+        id="inputNota"
+        placeholder="Escribe tu nota aquí…"
+        autocomplete="off"
+        aria-label="Texto de la nota"
+      />
+      <button class="btnAgregar">Agregar</button>
+    </div>
+
+    <!-- Mensaje de error de validación -->
+    <p id="mensajeError" role="alert" aria-live="polite">Por favor, escribe algo.</p>
+
+    <!-- Divisor -->
+    <div class="divider"><span>Lista de notas</span></div>
+
+    <!-- Lista donde se renderizan las notas -->
+    <ul id="listaNotas" aria-label="Lista de notas"></ul>
+
+    <!-- Footer con contador -->
+   <div class="footer-info">
+      <button id="btnSync" class="tag">Sincronizar API</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+</body>
+</html>
